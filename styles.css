@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3f51b5;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #3f51b5;
+    font-size: 1.3rem;
+}
+
+.date-selector {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.date-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.date-field {
+    flex: 1;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.hebrew-date {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 15px;
+    color: #3f51b5;
+}
+
+/* סגנונות לוח שנה עברי */
+.calendar-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.calendar-header {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-nav-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-nav-btn:hover {
+    background-color: #303f9f;
+}
+
+.calendar-grid {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+}
+
+.day-name {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #eee;
+}
+
+.calendar-day {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-day.current {
+    background-color: #e8eaf6;
+    font-weight: bold;
+}
+
+/* הגדרות סגנון לתאריך נבחר ותוצאות הוסרו מכאן והועברו לקובץ calendar.js */
+
+.calendar-day.empty {
+    background-color: #f9f9f9;
+}
+
+.calculations {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.calculation-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    width: 150px;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 10px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.result {
+    flex: 1;
+    padding: 10px;
+    margin-right: 20px;
+    font-weight: 500;
+    color: #3f51b5;
+}
+
+label {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .date-inputs {
+        flex-direction: column;
+    }
+    
+    .calculation-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .result {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}

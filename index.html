@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשבון הפלגות</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- שימוש בקובץ JavaScript פשוט יותר ללא תלות בספריית Hebcal -->
+    <script src="simple-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>מחשבון הפלגות</h1>
+        
+        <div class="date-selector">
+            <h2>בחירת תאריך התחלה</h2>
+            <div class="date-inputs">
+                <div class="date-field">
+                    <label for="day">יום:</label>
+                    <select id="day"></select>
+                </div>
+                <div class="date-field">
+                    <label for="month">חודש:</label>
+                    <select id="month"></select>
+                </div>
+                <div class="date-field">
+                    <label for="year">שנה:</label>
+                    <select id="year"></select>
+                </div>
+            </div>
+            <div class="hebrew-date" id="selected-hebrew-date"></div>
+        </div>
+        
+        <!-- לוח שנה עברי -->
+        <div class="calendar-container">
+            <h2>לוח שנה עברי</h2>
+            <div class="calendar-controls">
+                <button id="prev-month" class="calendar-nav-btn">▶</button>
+                <div class="calendar-header">
+                    <select id="calendar-month"></select>
+                    <select id="calendar-year"></select>
+                </div>
+                <button id="next-month" class="calendar-nav-btn">◀</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-days-header">
+                    <div class="day-name">א</div>
+                    <div class="day-name">ב</div>
+                    <div class="day-name">ג</div>
+                    <div class="day-name">ד</div>
+                    <div class="day-name">ה</div>
+                    <div class="day-name">ו</div>
+                    <div class="day-name">ש</div>
+                </div>
+                <div id="calendar-days" class="calendar-days"></div>
+            </div>
+        </div>
+        
+        <div class="calculations">
+            <h2>חישובי הפלגות</h2>
+            
+            <div class="calculation-row">
+                <div class="input-field">
+                    <input type="number" id="days1" min="1" value="30">
+                    <label>ימים</label>
+                </div>
+                <div class="result" id="result1"></div>
+            </div>
+            
+            <div class="calculation-row">
+                <div class="input-field">
+                    <input type="number" id="days2" min="1" value="31">
+                    <label>ימים</label>
+                </div>
+                <div class="result" id="result2"></div>
+            </div>
+            
+            <div class="calculation-row">
+                <div class="input-field">
+                    <input type="number" id="days3" min="1">
+                    <label>ימים</label>
+                </div>
+                <div class="result" id="result3"></div>
+            </div>
+            
+            <div class="calculation-row">
+                <div class="input-field">
+                    <input type="number" id="days4" min="1">
+                    <label>ימים</label>
+                </div>
+                <div class="result" id="result4"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="simple-script.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>

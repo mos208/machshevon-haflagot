@@ -192,6 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const year = parseInt(yearSelect.value);
         const month = parseInt(monthSelect.value);
         
+        // שמירת היום הנוכחי שנבחר לפני שינוי הרשימה
+        const currentSelectedDay = parseInt(daySelect.value) || 1;
+        
         // בחירת רשימת החודשים המתאימה
         const isLeapYear = isHebrewLeapYear(year);
         const months = isLeapYear ? hebrewMonthNamesLeap : hebrewMonthNames;
@@ -209,6 +212,14 @@ document.addEventListener('DOMContentLoaded', function() {
             option.value = i;
             option.textContent = hebrewDayOfMonth(i);
             daySelect.appendChild(option);
+        }
+        
+        // בחירת היום הקודם שהיה נבחר, אם הוא קיים בחודש החדש
+        if (currentSelectedDay <= daysInMonth) {
+            daySelect.value = currentSelectedDay;
+        } else {
+            // אם היום לא קיים בחודש החדש, בחר את היום האחרון בחודש
+            daySelect.value = daysInMonth;
         }
     }
     
